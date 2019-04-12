@@ -6,17 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/hello")
+@RequestMapping("/api/greeting")
 public class GreetingController {
 
 
-    @GetMapping("/greeting/{name}")
+    @GetMapping("/hello/{name}")
     public String hello(@PathVariable String name) {
+        System.out.println("hello");
         return String.format("Hello %s!", name);
     }
 
-    @GetMapping("/greeting")
+    @GetMapping("/hello")
     public String helloAll() {
+        System.out.println("helloall");
         return "Hello everyone!";
     }
 }
